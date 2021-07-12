@@ -22,6 +22,8 @@
 * [Hall of Fame](#hall-of-fame)
 * [License](#license)
 
+[![](https://www.jitpack.io/v/fiona0419/ARVI.svg)](https://www.jitpack.io/#fiona0419/ARVI)
+
 ## Demo (YouTube)
 
 [![YouTube Video](https://github.com/arthur3486/ARVI/blob/master/preview_image_1.png)](https://www.youtube.com/watch?v=q4SrpeyW7p8)
