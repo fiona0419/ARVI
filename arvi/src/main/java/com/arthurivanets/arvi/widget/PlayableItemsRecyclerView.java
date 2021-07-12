@@ -399,26 +399,26 @@ public final class PlayableItemsRecyclerView extends RecyclerView implements Pla
 
 
 
-    @Override
-    public final void onScrollStateChanged(int state) {
-        super.onScrollStateChanged(state);
-        handleItemPlayback(canPlay());
-    }
-
-
-
-
-    @Override
-    public final void onScrolled(int dx, int dy) {
-        super.onScrolled(dx, dy);
-
-        mIsScrolling = ((Math.abs(mPreviousScrollDeltaX - dx) > 0) || (Math.abs(mPreviousScrollDeltaY - dy) > 0));
-
-        handleItemPlayback(canPlay());
-
-        mPreviousScrollDeltaX = dx;
-        mPreviousScrollDeltaY = dy;
-    }
+//    @Override
+//    public final void onScrollStateChanged(int state) {
+//        super.onScrollStateChanged(state);
+//        handleItemPlayback(canPlay());
+//    }
+//
+//
+//
+//
+//    @Override
+//    public final void onScrolled(int dx, int dy) {
+//        super.onScrolled(dx, dy);
+//
+//        mIsScrolling = ((Math.abs(mPreviousScrollDeltaX - dx) > 0) || (Math.abs(mPreviousScrollDeltaY - dy) > 0));
+//
+//        handleItemPlayback(canPlay());
+//
+//        mPreviousScrollDeltaX = dx;
+//        mPreviousScrollDeltaY = dy;
+//    }
 
 
 
@@ -426,7 +426,7 @@ public final class PlayableItemsRecyclerView extends RecyclerView implements Pla
     private boolean canPlay() {
         final PlaybackTriggeringState state = getPlaybackStateForScrollState(getScrollState());
         final boolean containsState = mPlaybackTriggeringStates.contains(state);
-        final boolean isDragging = (PlaybackTriggeringState.DRAGGING.equals(state) && mIsScrolling);
+        final boolean isDragging = (PlaybackTriggeringState.DRAGGING.equals(state) && !mIsScrolling);
         final boolean isSettling = PlaybackTriggeringState.SETTLING.equals(state);
         final boolean isIdling = PlaybackTriggeringState.IDLING.equals(state);
 
