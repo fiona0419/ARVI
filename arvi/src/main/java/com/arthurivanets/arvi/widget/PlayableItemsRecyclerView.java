@@ -237,10 +237,9 @@ public final class PlayableItemsRecyclerView extends RecyclerView implements Pla
         for(int i = 0; i < childCount; i++) {
             viewHolder = findContainingViewHolder(getChildAt(i));
 
-            if ((viewHolder instanceof Playable)
-                    && ((Playable) viewHolder).isTrulyPlayable()
-                    && ((Playable) viewHolder).isPlaying()) {
-                ((Playable) viewHolder).pause();
+            if((viewHolder instanceof Playable)
+                    && ((Playable) viewHolder).isTrulyPlayable()) {
+                playableItems.add((Playable) viewHolder);
             }
         }
 
@@ -292,8 +291,9 @@ public final class PlayableItemsRecyclerView extends RecyclerView implements Pla
         for(int i = 0; i < childCount; i++) {
             viewHolder = findContainingViewHolder(getChildAt(i));
 
-            if((viewHolder instanceof Playable)
-                    && ((Playable) viewHolder).isTrulyPlayable()) {
+            if ((viewHolder instanceof Playable)
+                    && ((Playable) viewHolder).isTrulyPlayable()
+                    && ((Playable) viewHolder).isPlaying()) {
                 ((Playable) viewHolder).pause();
             }
         }
