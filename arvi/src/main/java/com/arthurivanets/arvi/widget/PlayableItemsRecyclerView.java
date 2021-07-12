@@ -426,7 +426,7 @@ public final class PlayableItemsRecyclerView extends RecyclerView implements Pla
     private boolean canPlay() {
         final PlaybackTriggeringState state = getPlaybackStateForScrollState(getScrollState());
         final boolean containsState = mPlaybackTriggeringStates.contains(state);
-        final boolean isDragging = (PlaybackTriggeringState.DRAGGING.equals(state) && !mIsScrolling);
+        final boolean isDragging = (PlaybackTriggeringState.DRAGGING.equals(state) && mIsScrolling);
         final boolean isSettling = PlaybackTriggeringState.SETTLING.equals(state);
         final boolean isIdling = PlaybackTriggeringState.IDLING.equals(state);
 
